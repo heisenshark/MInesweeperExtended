@@ -1988,6 +1988,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 427020831733512824, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081635410058925788, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 99.355
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081635410058925788, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100.33
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081635410058925788, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0.0001255
+      objectReference: {fileID: 0}
+    - target: {fileID: 2081635410058925788, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.00085282
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412149104212016320, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_Color.b
+      value: 0.33962262
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412149104212016320, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_Color.g
+      value: 0.33962262
+      objectReference: {fileID: 0}
+    - target: {fileID: 3412149104212016320, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_Color.r
+      value: 0.33962262
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559298894321728158, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 99.355
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559298894321728158, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 100.3332
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559298894321728158, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -0.0004
+      objectReference: {fileID: 0}
+    - target: {fileID: 3559298894321728158, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0.0017
+      objectReference: {fileID: 0}
+    - target: {fileID: 3641949985234472179, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5921316121808326701, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -1998,11 +2050,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6096033531553523758, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -3.33
+      value: -3.839
       objectReference: {fileID: 0}
     - target: {fileID: 6096033531553523758, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 4.179
+      value: 4.254
       objectReference: {fileID: 0}
     - target: {fileID: 6096033531553523758, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2040,6 +2092,26 @@ PrefabInstance:
       propertyPath: m_Name
       value: GridElement
       objectReference: {fileID: 0}
+    - target: {fileID: 7553425798723154302, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_CullTransparentMesh
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058133859249326692, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_Color.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058133859249326692, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_Color.b
+      value: 0.5849056
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058133859249326692, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_Color.g
+      value: 0.5849056
+      objectReference: {fileID: 0}
+    - target: {fileID: 9058133859249326692, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
+      propertyPath: m_Color.r
+      value: 0.5849056
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 43d9684d9599e834c93aa84610961a48, type: 3}
 --- !u!1 &3120162807656747741 stripped
@@ -2059,9 +2131,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2f82c91af2c93034ea5e177819d57550, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  state: 0
+  state: 1
   isBomb: 1
   mineCount: 0
   position: {x: 0, y: 0}
   bombs: {fileID: 1953912524}
   background: {fileID: 305719970}
+  parentSprite: {fileID: 0}
+--- !u!61 &3120162807656747745
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3120162807656747741}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1, y: 1}
+    newSize: {x: 1, y: 1}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
