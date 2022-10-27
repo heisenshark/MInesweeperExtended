@@ -1,0 +1,13 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" xmlns:uie="UnityEditor.UIElements" xsi="http://www.w3.org/2001/XMLSchema-instance" engine="UnityEngine.UIElements" editor="UnityEditor.UIElements" noNamespaceSchemaLocation="../UIElementsSchema/UIElements.xsd" editor-extension-mode="False">
+    <Style src="project://database/Assets/style.uss?fileID=7433441132597879392&amp;guid=cd95220366490254f8351c70f74a9db1&amp;type=3#style" />
+    <ui:GroupBox style="height: 20%; top: 0; background-color: rgb(123, 123, 123); margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; align-items: stretch; justify-content: space-around; flex-direction: row; position: relative; left: 0; bottom: 80%; width: 100%;">
+        <ui:Label text="Error Display" display-tooltip-when-elided="true" style="height: 21px; width: 167px; -unity-text-align: middle-left; position: absolute; left: 5px; top: 85px;" />
+        <ui:Button text="Clear Board" display-tooltip-when-elided="true" name="clear-board" style="flex-direction: column; position: absolute; left: 8px; white-space: nowrap; -unity-text-align: middle-center; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; align-items: flex-start; top: 5px; width: 107px; height: 34px;" />
+        <ui:Button text="Generate Board" display-tooltip-when-elided="true" name="generate-board" style="flex-direction: column; position: absolute; left: 8px; white-space: nowrap; -unity-text-align: middle-center; margin-left: 0; margin-right: 0; margin-top: 0; margin-bottom: 0; padding-left: 0; padding-right: 0; padding-top: 0; padding-bottom: 0; align-items: flex-start; bottom: 34px; top: 52px; width: 107px;" />
+    </ui:GroupBox>
+    <ui:GroupBox style="position: absolute; top: 8px; left: 248px; width: 381px; height: 86px; flex-direction: column; align-items: stretch; justify-content: center;">
+        <ui:SliderInt picking-mode="Ignore" label="size-y" value="42" high-value="100" low-value="10" name="size-y" show-input-field="true" inverted="false" direction="Horizontal" style="opacity: 1; width: auto; height: 33px; position: relative; top: auto; left: auto;" />
+        <ui:SliderInt picking-mode="Ignore" label="size-x" value="42" high-value="100" low-value="10" name="size-x" show-input-field="true" style="opacity: 1; width: auto; height: 37px; position: relative; top: auto; left: auto;" />
+    </ui:GroupBox>
+    <ui:Label text="Label" display-tooltip-when-elided="true" enable-rich-text="true" />
+</ui:UXML>

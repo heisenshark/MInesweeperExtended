@@ -1,10 +1,10 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class GridElement : MonoBehaviour
 {
-    //static MasterClass masterClass;
     public enum GridElementState
     {
         BOMB,
@@ -24,7 +24,7 @@ public class GridElement : MonoBehaviour
     private void Start()
     {
         parentSprite = GetComponent<SpriteRenderer>();
-        startColor = parentSprite.color;
+        startColor = new Color32(0x57, 0x57, 0x57, 0xFF);
         UpdateState();
     }
     void UpdateState()
@@ -48,20 +48,34 @@ public class GridElement : MonoBehaviour
                 background.gameObject.SetActive(false);
                 parentSprite.color = startColor;
                 break;
+
         }
+        if (mineCount == 0)
+            bombs.gameObject.SetActive(false);
+        bombs.text = $"{mineCount}";
+        var xd = ((float)mineCount/8);
+        bombs.color = new Color(xd,0.7f,xd);
     }
     public void Reveal()
     {
+        MasterObject.masterObject.tilesRevealed++;
         if (!isBomb)
+        {
             state = GridElementState.REVEALED;
+            if (mineCount == 0)
+                MasterObject.masterObject.RevealSquare(position.x, position.y);
+        }
         else
         {
             state = GridElementState.BOMB;
-            //TODO: loseGame(); function    
+            //TODO: loseGame(); function  \
+            MasterObject.masterObject.LoseGame();
         }
+        UpdateState();
     }
     void Click()
     {
+        if (MasterObject.masterObject.lostGame) return;
         switch (state)
         {
             case GridElementState.HIDDEN:
@@ -69,6 +83,7 @@ public class GridElement : MonoBehaviour
                 break;
             case GridElementState.REVEALED:
                 //TODO: check all of neighbours and reveal them if there is enough flags
+                MasterObject.masterObject.RevealIf(position.x, position.y);
                 break;
             default:
                 return;
@@ -78,26 +93,35 @@ public class GridElement : MonoBehaviour
     void RightClick()
     {
         if (state == GridElementState.HIDDEN)
+        {
             state = GridElementState.SUSSY;
+            MasterObject.masterObject.flagCount++;
+        }
         else if (state == GridElementState.SUSSY)
+        {
+            MasterObject.masterObject.flagCount--;
             state = GridElementState.HIDDEN;
+        }
         UpdateState();
-    }
-    void OnMouseEnter()
-    {
-        parentSprite.color = Color.white;
     }
     void OnMouseOver()
     {
-        if (Input.GetMouseButtonDown(1))
+        if (Input.GetMouseButtonUp(1))
             RightClick();
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonUp(0))
             Click();
+        parentSprite.color = Color.white;
+
         // Debug.Log("Left Click");
     }
     void OnMouseExit()
     {
         parentSprite.color = startColor;
         UpdateState();
+    }
+
+    internal void incrementMineCount()
+    {
+        mineCount++;
     }
 }

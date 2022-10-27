@@ -1,0 +1,6 @@
+.test Label {
+    opacity: 1;
+    translate: 86px 0;
+    display: none;
+    align-items: auto;
+}
