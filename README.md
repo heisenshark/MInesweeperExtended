@@ -1,17 +1,25 @@
 # MInesweeperExtended
-simple minesweeper game mad in unity in a few days
+simple minesweeper game made in unity in a few days
 
-It got all the basic features at the moment and supports boards that contain up to 50*50 tiles
+You can play it [here](https://simmer.io/@Heisenshark/minesweeper)
 
-
-![jeszcze jak](readmeimg/Screenshot2.png)
+It got all the basic features at the moment and supports boards that contain up to 50*50 tiles  \
+![jeszcze jak](readmeimg/Screenshot2.png)  
 Player can generate a grid with up to 50X50 size and 100 bombs
-also they can pan the camera and increase zoom to traverse larger maps
-![jeszcze jak](readmeimg/Screenshot2.png)
+also they can pan the camera and increase zoom to traverse larger maps  \
+![jeszcze jak](readmeimg/Screenshot2.png)  
 
-### Example gameplay 
+### Example gameplay
+#### Controlls
+- scroll to zoom
+- drag scroll(or press Space) to pan
+- left-click to reval tile (and reveal many if tile is already revealed)  
+- right-click to flag a tile
 
-![Gameplay](readmeimg/Animation2.gif)
+  
+![Gameplay](readmeimg/Animation2.gif)  
+
+### Premise
 
 The game is pretty much quick prototype done in a few days(its too long anyway) acting as a showcase that I am familliar with unity in any way.
 

@@ -37,6 +37,7 @@ public class MasterObject : MonoBehaviour
 
         if (!wonGame && boardHeight * boardWidth - tilesRevealed == bombsCount)
         {
+            flagCount = bombsCount;
             wonGame = true;
             bombs.ForEach(
                 x=>{

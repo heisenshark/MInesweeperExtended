@@ -19,10 +19,10 @@ public class CameraController : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButtonDown(2))
+        if (Input.GetMouseButtonDown(2)||Input.GetKeyDown(KeyCode.Space))
             dragOrigin = Camera.main.ScreenToWorldPoint(Input.mousePosition);
 
-        if (Input.GetMouseButton(2))
+        if (Input.GetMouseButton(2)||Input.GetKey(KeyCode.Space))
         {
             var diff = dragOrigin - Camera.main.ScreenToWorldPoint(Input.mousePosition); 
 
