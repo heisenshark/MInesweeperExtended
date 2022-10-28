@@ -27,7 +27,7 @@ public class GridElement : MonoBehaviour
         startColor = new Color32(0x57, 0x57, 0x57, 0xFF);
         UpdateState();
     }
-    void UpdateState()
+    public void UpdateState()
     {
         switch (state)
         {
@@ -61,6 +61,7 @@ public class GridElement : MonoBehaviour
         MasterObject.masterObject.tilesRevealed++;
         if (!isBomb)
         {
+            MasterObject.masterObject.isGameStarted = true;
             state = GridElementState.REVEALED;
             if (mineCount == 0)
                 MasterObject.masterObject.RevealSquare(position.x, position.y);

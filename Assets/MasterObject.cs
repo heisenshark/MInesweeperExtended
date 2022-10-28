@@ -10,10 +10,11 @@ public class MasterObject : MonoBehaviour
 {
     public static MasterObject masterObject;
     [SerializeField] GridElement[,] gridElements;
+    [SerializeField] List<GridElement> bombs;
     [SerializeField] GridElement templateGridElement;
     [SerializeField] bool won = false;
     [SerializeField] public float timeElapsed;
-    [SerializeField] bool isGameStarted = true;
+    [SerializeField] public bool isGameStarted = true;
     [SerializeField] public int boardWidth = 10;
     [SerializeField] public int flagCount = 0;
     [SerializeField] public int boardHeight = 10;
@@ -31,16 +32,27 @@ public class MasterObject : MonoBehaviour
     }
     void Update()
     {
-        timeElapsed += Time.deltaTime;
+        if (isGameStarted && !wonGame && !lostGame)
+            timeElapsed += Time.deltaTime;
 
-        if(boardHeight*boardWidth-tilesRevealed == bombsCount)
+        if (!wonGame && boardHeight * boardWidth - tilesRevealed == bombsCount)
+        {
             wonGame = true;
+            bombs.ForEach(
+                x=>{
+                    x.state = GridElement.GridElementState.SUSSY;
+                    x.UpdateState();
+                }
+            );
+        }
     }
     public void GenerateGrid()
     {
         ClearBoard();
-        lostGame= false;
+        lostGame = false;
         wonGame = false;
+        isGameStarted = false;
+        timeElapsed = 0;
         gridElements = new GridElement[boardWidth, boardHeight];
         for (int i = 0; i < boardWidth; i++)
         {
@@ -81,6 +93,7 @@ public class MasterObject : MonoBehaviour
     }
     private void ScatterBombs()
     {
+        bombs.Clear();
         var bombsNumber = bombsCount;
 
         //TODO: Change it to spaggetthi code that will modify array and then fix it xDDDD
@@ -98,7 +111,9 @@ public class MasterObject : MonoBehaviour
         }
         xd.Take(bombsCount).ToList().ForEach(x =>
         {
-            gridElements[x.Item1, x.Item2].isBomb = true;
+            var elem = gridElements[x.Item1, x.Item2];
+            bombs.Add(elem);
+            elem.isBomb = true;
             IterateOverNeighbours(x.Item1, x.Item2, element =>
             {
                 element.incrementMineCount();
@@ -161,7 +176,7 @@ public class MasterObject : MonoBehaviour
     {
         tilesRevealed = 0;
         flagCount = 0;
-        if(gridElements==null)return;
+        if (gridElements == null) return;
         foreach (var item in gridElements)
         {
             Destroy(item.gameObject);
@@ -169,7 +184,8 @@ public class MasterObject : MonoBehaviour
         gridElements = null;
     }
 
-    public void LoseGame(){
+    public void LoseGame()
+    {
         lostGame = true;
     }
 }
