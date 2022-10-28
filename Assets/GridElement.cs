@@ -46,15 +46,15 @@ public class GridElement : MonoBehaviour
             case GridElementState.REVEALED:
                 bombs.gameObject.SetActive(true);
                 background.gameObject.SetActive(false);
-                parentSprite.color = startColor;
+
                 break;
 
         }
         if (mineCount == 0)
             bombs.gameObject.SetActive(false);
         bombs.text = $"{mineCount}";
-        var xd = ((float)mineCount/8);
-        bombs.color = new Color(xd,0.7f,xd);
+        var xd = ((float)mineCount / 8);
+        bombs.color = new Color(xd, 0.7f, xd);
     }
     public void Reveal()
     {
@@ -92,6 +92,7 @@ public class GridElement : MonoBehaviour
     }
     void RightClick()
     {
+        if (MasterObject.masterObject.lostGame) return;
         if (state == GridElementState.HIDDEN)
         {
             state = GridElementState.SUSSY;
@@ -111,6 +112,8 @@ public class GridElement : MonoBehaviour
         if (Input.GetMouseButtonUp(0))
             Click();
         parentSprite.color = Color.white;
+        if (Input.GetMouseButton(0))
+            parentSprite.color = Color.gray;
 
         // Debug.Log("Left Click");
     }
