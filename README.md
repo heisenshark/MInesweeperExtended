@@ -6,7 +6,7 @@ You can play it [here](https://simmer.io/@Heisenshark/minesweeper)
 It got all the basic features at the moment and supports boards that contain up to 50*50 tiles  \
 ![jeszcze jak](readmeimg/Screenshot2.png)  
 Player can generate a grid with up to 50X50 size and 100 bombs
-also they can pan the camera and increase zoom to traverse larger maps  \
+also they can pan the camera and increase zoom to traverse larger maps  
 
 ### Example gameplay
 #### Controlls
